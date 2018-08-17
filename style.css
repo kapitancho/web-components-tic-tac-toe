@@ -1,0 +1,78 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+body {
+	padding: 20px;
+	
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+	xjustify-content: center;
+	grid-gap: 20px;
+	
+	font-family: Verdana;
+}
+body {
+}
+
+h1, h4 {
+	text-align: center;
+	margin: 0;
+}
+
+xo-board {
+	display: grid;
+	box-sizing: border-box;
+	width: 250px;
+	height: 250px;
+	max-width: 90vw;
+	max-height: 90vw;
+	border: solid 1px black;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	padding: 1px;
+	background: #EEA;
+	
+}
+xo-square {
+	margin: 3px;
+	font-size: 40px;
+	background: white;
+	border: solid 1px black;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	-moz-user-select: none;
+}
+xo-board:not([winning]) xo-square {
+	cursor: pointer;
+}
+xo-board:not([winning]) xo-square:hover {
+	background: #EFE;
+}
+xo-board[winning] xo-square:not([winning]) {
+	color: #AAA;
+}
+xo-square[winning] {
+	background: #3F3;
+	color: blue;
+}
+
+xo-board[player="x"] + #status::before {
+	content: 'x to play';
+}
+xo-board[player="o"] + #status::before {
+	content: 'o to play';
+}
+xo-board[winning="x"] + #status::before {
+	content: 'x wins';
+}
+xo-board[winning="o"] + #status::before {
+	content: 'o wins';
+}
+xo-board[winning="draw"] + #status::before {
+	content: 'it\'s a draw';
+}

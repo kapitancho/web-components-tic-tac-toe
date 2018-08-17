@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="components.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	<head>
+	<body>
+		<h1>Tic-tac-toe: web components demo</h1>
+		<h4>Tested in Firefox and Chrome (8/2018)</h4>
+		<button onclick="this.nextElementSibling.restart()">Restart</button>
+		<xo-board player="x"></xo-board>
+		<div id="status" />
+	<body>
+</html>
